@@ -3,7 +3,7 @@ function dbConexion()
 {
      $connexion = null; //variable qui doit stocker notre instance de conexion a la base de données
      $host = 'localhost';
-     $dbName = "library";
+     $dbName = "biblio";
      $identify = 'root';
      $password = "";
 try { //try (essayer) de se connecter à la base de donnnées

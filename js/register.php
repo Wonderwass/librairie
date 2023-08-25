@@ -1,50 +1,77 @@
 <?php
-require_once('./inc/function.php');
-require_once('./inc/header.php');
+require_once('../inc/function.php');
+require_once('../inc/header.php');
 ?>
+
 <!DOCTYPE html>
-<html lang="fr
-">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <h1> Page d'inscription</h1>
-    <div class="container">
-        <form action="register.php" method="post" enctype="multipart/form-data">
-
-            <label for=""></label>
-
-            <label for="nom"></label>
-            <input type="text" id="nom" name="pseudo" required placeholder="Votre pseudo"><br><br>
-
-            <label for="email"></label>
-            <input type="email" id="email" name="email" required placeholder="Votre email"><br><br>
-
-            <label for="motDePasse"></label>
-            <input type="password" id="motDePasse" name="motDePasse" required placeholder="Mot de passe"><br><br>
-
-            <label for="confirmerMotDePasse"></label>
-            <input type="password" id="confirmerMotDePasse" name="confirmerMotDePasse" required
-                placeholder="Confirmer le mot de passe"><br><br>
-
-            <label for="fichier"></label>
-            <input type="file" id="fichier" name="fichier" required placeholder="Choisir un fichier"><br><br>
-
-            <input type="submit" value="Inscription" id="inscription" name="inscription">
-        </form>
-    </div>
+    <form method="POST" action="../js/model/db_registre.php">
 
 
+        <div class="flex">
+
+            <h1>Page D'Inscription</h1>
+
+            <div class="infos">
+
+                <select name="genre" id="genre-select">
+
+                    <option value="">--Sexe--</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+
+                </select>
+
+                <input type="text" name="lastName" placeholder="Nom" required>
+                <input type="text" name="firstName" placeholder="Prénom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <input type="password" name="confirm" placeholder="Confirmez votre mot de passe" required>
+                <input type="date" name="birthday" placeholder="Date de naissance" required>
+                <input type="tel" name="phone" placeholder="n° telephone" required>
+
+            </div>
+
+            <label for="message">Message : </label>
+
+            <textarea id="message" name="message" rows="5" cols="33">
+
+        </textarea>
+
+            <div class="pays">
+
+                <label for="pays">Pays :</label>
+
+                <select class="form-control" id="pays" name="country">
+
+                    <option value="france">France</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                    <option value="autre">Autre</option>
+
+                </select>
+            </div>
+
+            <div class="buttons">
+
+                <button type="button" name="connexion"><a href="connexion.php">Connexion</a></button>
+                <button type="submit" name="inscription">valider</button>
+                <button type="button"><a href="index.php">retour</a></button>
+                <input type="checkbox" name="conditions">
+            </div>
+
+        </div>
+        <?php require_once("../inc/footer.php"); ?>
     </form>
 </body>
 
