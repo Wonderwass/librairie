@@ -1,4 +1,4 @@
 <?php
 
-require_once('../inc/db_connetion.php');
+require_once('db_connetion.php');
 

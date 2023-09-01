@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "../../inc/db_connetion.php";
+require_once "../inc/db_connetion.php";
 
 if (isset($_POST["inscription"])) {
     $lastName = $_POST["lastName"];
